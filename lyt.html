@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href=""/>
+    <title></title>
+    <style></style>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            url:"http://localhost:3000/",
+            type:"post",
+            data:{abc:1},
+            success:function(e){
+                for(var i=0;i< e.title.length;i++){
+                    $("body").append("<p>"+ e.title[i]+"</p>")
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>
